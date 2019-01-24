@@ -13,7 +13,7 @@ Some js basics
   - specialMultiply (two ways to implement)
   - guessingGame
 
-3. JS-Call-Aplly-Bind.js: Call,Aplly and Bind examples
+3. JS-call-aplly-bind.js: Call,Aplly and Bind examples
   - call
   - apply
   - bind
