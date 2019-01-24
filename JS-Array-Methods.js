@@ -1,5 +1,56 @@
+// forEach
+function doubleValues1(arr){
+    var newArr = [];
+    arr.forEach(function(val){
+        newArr.push(val * 2)
+    })
+    return newArr;
+}
+
+function onlyEvenValues(arr){
+    var newArr = [];
+    arr.forEach(function(val){
+        if(val % 2 === 0){
+            newArr.push(val)
+        }
+    })
+    return newArr;
+}
+
+function showFirstAndLast(arr){
+    var newArr = [];
+    arr.forEach(function(val){
+        newArr.push(val[0] + val[val.length-1])
+    });
+    return newArr;
+}
+
+function addKeyAndValue1(arr,key,value){
+    arr.forEach(function(val){
+        val[key] = value;
+    });
+    return arr;
+}
+
+function vowelCount1(str){
+    var splitArr = str.toLowerCase().split("");
+    var obj = {};
+    var vowels = "aeiou";
+
+    splitArr.forEach(function(letter){
+        if(vowels.indexOf(letter) !== -1){
+            if(obj[letter]){
+                obj[letter]++;
+            } else{
+                obj[letter] = 1;
+            }
+        }
+    });
+    return obj;
+}
+
 //MAP
-function doubleValues(arr){
+function doubleValues2(arr){
     return arr.map(function(val){
         return val * 2;
     });
@@ -106,7 +157,7 @@ function extractValue(arr, key){
     }, []);
 }
 
-function vowelCount(str){
+function vowelCount2(str){
     var vowels = "aeiou";
     return str.toLowerCase().split('').reduce(function(acc,next){
         if(vowels.indexOf(next) !== -1){
@@ -120,7 +171,7 @@ function vowelCount(str){
     },{});
 }
 
-function addKeyAndValue(arr, key, value){
+function addKeyAndValue2(arr, key, value){
     return arr.reduce(function(acc,next, index){
         acc[index][key] = value;
         return acc;
@@ -140,13 +191,45 @@ return arr.reduce(function(acc, next, index){
 }
 
  //----------------------------------------------
+ //                 RUN FOREACH
+ //----------------------------------------------
+ console.log("-------FOREACH--------");
+
+ console.log(">>doubleValues:");
+ console.log(doubleValues1([1,2,3])); // [2,4,6]
+ console.log(doubleValues1([5,1,2,3,10])); // [10,2,4,6,20]
+
+ console.log(">>onlyEvenValues:");
+ console.log(onlyEvenValues([5,1,2,3,10]));// [2,10]
+
+ console.log(">>showFirstAndLast:");
+ console.log(showFirstAndLast(['hi', 'goodbye', 'smile'])); // ['hi', 'ge', 'se']
+
+ console.log(">>addKeyAndValue:");
+var arr0 = [{name: 'A'}, {name: 'B'}, {name: 'C'}, {name: 'D'}];
+ console.log(addKeyAndValue1(arr0, 'title', 'Instructor'));
+// [
+//     {title: 'Instructor', name: 'A'}, 
+//     {title: 'Instructor', name: 'B'}, 
+//     {title: 'Instructor', name: 'C'}, 
+//     {title: 'Instructor', name: 'D'}
+//    ]
+// */
+
+ console.log(">>vowelCount:");
+ console.log(vowelCount1('Elie')); // {e:2,i:1};
+ console.log(vowelCount1('Tim')); // {i:1};
+ console.log(vowelCount1('Matt')); // {a:1})
+ console.log(vowelCount1('hmmm')); // {};
+ console.log(vowelCount1('I Am awesome and so are you')); // {i: 1, a: 4, e: 3, o: 3, u: 1};);
+ //----------------------------------------------
  //                 RUN MAP
  //----------------------------------------------
  
  console.log("-------MAP--------");
 
  console.log(">>doubleValues:");
- console.log(doubleValues([1,2,3])); 
+ console.log(doubleValues2([1,2,3])); 
 
 console.log(">>valTimesIndex:");
 console.log(valTimesIndex([-11,2,3]));
@@ -229,14 +312,14 @@ var arr2 = [{name: 'A'}, {name: 'B'}, {name: 'C'}, {name: 'D'}];
 console.log(extractValue(arr2,'name')); // ['A', 'B', 'C', 'D']
 
 console.log(">>vowelCount:");
-console.log(vowelCount('Elie')); // {e:2,i:1};
-console.log(vowelCount('Tim')); // {i:1};
-console.log(vowelCount('Matt')); // {a:1})
-console.log(vowelCount('hmmm')); // {};
-console.log(vowelCount('I Am awesome and so are you')); // {i: 1, a: 4, e: 3, o: 3, u: 1};
+console.log(vowelCount2('Elie')); // {e:2,i:1};
+console.log(vowelCount2('Tim')); // {i:1};
+console.log(vowelCount2('Matt')); // {a:1})
+console.log(vowelCount2('hmmm')); // {};
+console.log(vowelCount2('I Am awesome and so are you')); // {i: 1, a: 4, e: 3, o: 3, u: 1};
 
 console.log(">>addKeyAndValue:");
-console.log(addKeyAndValue(arr2, 'title', 'Instructor'));
+console.log(addKeyAndValue2(arr2, 'title', 'Instructor'));
 // [
 //     {title: 'Instructor', name: 'A'}, 
 //     {title: 'Instructor', name: 'B'}, 
