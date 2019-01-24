@@ -1,5 +1,5 @@
 
-function specialMultiply(a,b){
+function specialMultiply1(a,b){
     if(b !== undefined){
         return a * b;
     }
@@ -7,11 +7,23 @@ function specialMultiply(a,b){
             return a * b;
     }
 }
+function specialMultiply2(a,b){
+    if(arguments.length === 1){
+      return function(b){
+        return a*b;
+      }
+    }
+    return a*b;
+  }
 
 console.log("--------Special Multiply-------------");
-console.log(specialMultiply(3,4)); // 12
-console.log(specialMultiply(3)(4)); // 12
-console.log(specialMultiply(3)); // function(){}....
+console.log(specialMultiply1(3,4)); // 12
+console.log(specialMultiply1(3)(4)); // 12
+console.log(specialMultiply1(3)); // function(){}....
+
+console.log(specialMultiply2(3,4)); // 12
+console.log(specialMultiply2(3)(4)); // 12
+console.log(specialMultiply2(3)); // function(){}....
 
 console.log("---------Guessing Game---------------");
 
