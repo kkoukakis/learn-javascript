@@ -1,7 +1,7 @@
 # learn-javascript
 Some js basics
 
-1. JS-ArrayMethods.js:  Array Methods examples
+1. JS-ArrayMethods.js:   Array Methods examples
   - forEach
   - map
   - filter
@@ -9,11 +9,11 @@ Some js basics
   - every
   - reduce
   
-2. JS-closure.js:  Closure examples
+2. JS-closure.js:   Closure examples
   - specialMultiply (two ways to implement)
   - guessingGame
 
-3. JS-call-aplly-bind.js: Call, Aplly and Bind examples
+3. JS-call-aplly-bind.js:  Call, Aplly and Bind examples
   - call
   - apply
   - bind
